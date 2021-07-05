@@ -17,9 +17,12 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //クリックでダッシュ
+        if (Input.GetMouseButton(0))
         {
-            rigid.AddForce(new Vector3(-10f, 0f, 0f));
+            rigid.AddForce(10f, 0f, 0f);
+
+            Debug.Log("aaa");
         }
     }
 
