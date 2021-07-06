@@ -7,6 +7,10 @@ public class CharacterController : MonoBehaviour
 
     [SerializeField] Rigidbody rigid;
 
+    [SerializeField] Animator animator;
+
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +21,20 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //クリックでダッシュ
+        //?N???b?N???_?b?V??
         if (Input.GetMouseButton(0))
         {
-            rigid.AddForce(10f, 0f, 0f);
+            rigid.AddForce(50f, 0f, 0f);
 
             Debug.Log("aaa");
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            rigid.AddForce(1000f, 1000f, 0f);
+
+            animator.SetBool("isFlying", true);
         }
     }
 
